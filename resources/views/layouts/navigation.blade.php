@@ -82,6 +82,18 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('products.index')" :active="request()->routeIs('products.index')">
+                {{ __('Produtos') }}
+            </x-responsive-nav-link>
+            {{--
+            <x-responsive-nav-link :href="route('transactions.index')" :active="request()->routeIs('transactions.index')">
+                {{ __('Transações') }}
+            </x-responsive-nav-link> --}}
+            @can('is-admin')
+                <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                    {{ __('Usuários') }}
+                </x-responsive-nav-link>
+            @endcan
         </div>
 
         <!-- Responsive Settings Options -->
