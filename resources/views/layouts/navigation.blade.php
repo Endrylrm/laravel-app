@@ -15,10 +15,17 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('products.index')" :active="request()->routeIs('products.index')">
+                        {{ __('Produtos') }}
+                    </x-nav-link>
+                    {{--
+                    <x-nav-link :href="route('transactions.index')" :active="request()->routeIs('transactions.index')">
+                        {{ __('Transações') }}
+                    </x-nav-link> --}}
                     @can('is-admin')
                         <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
-                            {{ __('Users') }}
-                        </x-nav-link>                        
+                            {{ __('Usuários') }}
+                        </x-nav-link>
                     @endcan
                 </div>
             </div>

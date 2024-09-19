@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\CheckIfIsAdmin;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,17 @@ Route::middleware(['auth', CheckIfIsAdmin::class])
         Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
         Route::post('/users', [UserController::class, 'store'])->name('users.store');
         Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    });
+
+Route::middleware('auth')
+    ->group(function () {
+        Route::delete('/products/{product}/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
+        Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+        Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
+        Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
+        Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
+        Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+        Route::get('/products', [ProductController::class, 'index'])->name('products.index');
     });
 
 Route::get('/', function () {

@@ -1,6 +1,6 @@
-@extends('admin.layouts.app')
+@extends('products.layouts.app')
 
-@section('title', 'Lista de usuários')
+@section('title', 'Lista de produtos')
 
 @section('content')
     @include('admin.users.partials.breadcrumb')
@@ -31,7 +31,7 @@
                         <td class="px-6 py-4">{{ $user->name }}</td>
                         <td class="px-6 py-4">{{ $user->email }}</td>
                         <td class="px-6 py-4">
-                            <a href="{{ route('users.edit', $user->id) }}">Edit</a>
+                            <a href="{{ route('users.edit', $user->id) }}">Editar</a>
                             <a href="{{ route('users.show', $user->id) }}">Detalhes</a>
                         </td>
                     </tr>
