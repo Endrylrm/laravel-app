@@ -21,4 +21,14 @@ class Product extends Model
         'user_id',
         'updated_by',
     ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'user_id',
+        'updated_by',
+    ];
 }
