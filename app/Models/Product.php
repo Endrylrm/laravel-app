@@ -18,5 +18,7 @@ class Product extends Model
         'name',
         'value',
         'amount',
+        'user_id',
+        'updated_by',
     ];
 }

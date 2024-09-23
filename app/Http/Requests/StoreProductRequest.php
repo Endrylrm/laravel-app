@@ -35,6 +35,14 @@ class StoreProductRequest extends FormRequest
             'amount' => [
                 'required',
                 'integer',
+            ],
+            'user_id' => [
+                'nullable',
+                'integer',
+            ],
+            'updated_by' => [
+                'nullable',
+                'integer',
             ]
         ];
     }

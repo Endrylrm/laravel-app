@@ -20,6 +20,8 @@ class ProductFactory extends Factory
             'name' => fake()->text(10),
             'value' => fake()->randomFloat(2),
             'amount' => fake()->numberBetween(0, 300),
+            'user_id' => 0,
+            'updated_by' => 0,
         ];
     }
 }
