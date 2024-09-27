@@ -29,19 +29,19 @@
         </thead>
         <tbody class="text-gray-600 text-sm font-light">
             @forelse ($products as $product)
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                    <td class="px-6 py-4">{{ $product->name }}</td>
-                    <td class="px-6 py-4">{{ $product->value }}</td>
-                    <td class="px-6 py-4">{{ $product->amount }}</td>
-                    <td class="px-6 py-4">
-                        <a href="{{ route('products.edit', $product->id) }}">Editar</a>
-                        <a href="{{ route('products.show', $product->id) }}">Detalhes</a>
-                    </td>
-                </tr>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <td class="px-6 py-4">{{ $product->name }}</td>
+                <td class="px-6 py-4">{{ $product->value }}</td>
+                <td class="px-6 py-4">{{ $product->amount }}</td>
+                <td class="px-6 py-4">
+                    <a href="{{ route('products.edit', $product->id) }}">Editar</a>
+                    <a href="{{ route('products.show', $product->id) }}">Detalhes</a>
+                </td>
+            </tr>
             @empty
-                <tr>
-                    <td colspan="100">Nenhum produto no banco</td>
-                </tr>
+            <tr class="text-center text-lg">
+                <td colspan="100">Nenhum produto no banco</td>
+            </tr>
             @endforelse
         </tbody>
     </table>

@@ -18,5 +18,7 @@ class Transaction extends Model
         'name',
         'type',
         'value',
+        'user_id',
+        'updated_by',
     ];
 }
